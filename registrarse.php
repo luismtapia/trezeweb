@@ -15,25 +15,24 @@
   <body>
     <div class="caja">
 
-      <form class="" action="inicio.php" method="post" onsubmit="enviar(event, this)">
+      <form class="" action="" method="post" onsubmit="enviar(event, this)">
         <div class="iniciar_sesion">
-      		<h2 class="form-titulo" id="iniciar_sesion">Iniciar sesion</h2>
+      		<h2 class="form-titulo" id="iniciar_sesion">Registro</h2>
       		<div class="form-cuerpo">
-
+            <input type="email" class="input" placeholder="Correo" title=""/>
       			<input type="text" class="input" placeholder="Usuario" title=""/>
       			<input type="password" class="input" placeholder="Password" />
       		</div>
       	</div>
         <div class="centrado">
-          <button type="submit" class="bubbly-button">Iniciar sesion</button>
+          <button type="submit" class="bubbly-button">Crear cuenta</button>
         </div>
 
         <div class="">
           <h5 class="logo">|3 TREZE</h5>
         </div>
         <div class="botonera">
-
-            <a class="iconos" href="registrarse.php">Registrate <span class="fa fa-arrow-circle-right"></span> </a>
+            <a class="iconos" href="index.php">Iniciar sesion <span class="fa fa-arrow-circle-right"></span> </a>
         </div>
       </form>
     </div>
@@ -45,7 +44,7 @@
           evento.preventDefault(); //Cancelo el envío
           setTimeout(function(){ //Aplico el temporizador
               formulario.submit(); //Envío los datos
-          }, 1000);
+          }, 3000);
         }
     </script>
   </body>
