@@ -1,0 +1,43 @@
+
+
+@import "lesshat";
+
+
+.container-{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 60px;
+  margin: 0 auto;
+  top:20px;
+}
+
+.div-img-{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    .img-{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 150px;
+        transform:translate(0px);
+    }
+    .text-{
+        font-family: 'Open Sans';
+        position:absolute;
+        z-index: -1;
+        display:block;
+        height: 50%;
+        top:50%;
+        right:0;
+        padding-right:5px;
+    }
+    &:hover{
+        .img-{
+            transform:translate(-90px,0px);
+        }
+     }
+}
