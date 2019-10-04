@@ -79,3 +79,65 @@ body{
   background: #ff0081;
   right: 0;
 }
+
+
+/************************************************                     **********************/
+.pie-pagina{
+  width: 100%;
+  background-image: -webkit-linear-gradient(#191919, #191919);
+  background-image: -o-linear-gradient(#191919, #191919);
+  background-image: linear-gradient(#191919, #191919);
+  float: left;
+  justify-content: center;
+}
+
+.tarjetas-footer{
+  margin: 10px 20px 10px 20px;
+  //background-color: #ff8881;
+  //display: block;
+  max-width: 97%;
+  height: 350px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.tarjetas{
+  height: 250px;
+  width: 25%;
+	float: left;
+  color: #ff0081;
+  background-color: white;
+  border-bottom: 6px solid #e4bc17;
+  border-radius: 5px;
+  margin: 20px 20px 10px 20px;
+  padding: 40px 20px 10px 20px;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+}
+.icono{
+  font-size: 32px;
+}
+.separador {
+  padding: 20px;
+}
+.lineas{
+  display: inline;
+}
+.linea1 .linea2 {
+
+}
+.linea1 {
+  float: left;
+  width: 60px;
+}
+.linea2{
+  float: right;
+  width: 60px;
+}
+
+
+
+.derechos{
+  color: #ffffff;
+  margin-bottom: 30px;
+}
