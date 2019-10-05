@@ -13,7 +13,7 @@
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css'>
 
     <link rel="stylesheet" href="css/redes_sociales.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/treze.css">
 
   </head>
   <body>
@@ -64,10 +64,7 @@
       <button class="bubbly-button">Click me!</button>
       <script  src="js/script_burbujas.js"></script>
   </body>
-  <footer class="footer">
-    <div class="imagen" id="imagen">
-
-    </div>
+  <footer class="pie-pagina">
     <div class="tarjetas-footer">
       <div class="tarjetas">
         <div class="icono">
