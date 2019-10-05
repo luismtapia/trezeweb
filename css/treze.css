@@ -3,7 +3,10 @@ body{
   background: #191919;
   color: #ffffff;
 }
-
+.separacion-abajo-arriba{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
 /***************************************                 ENCABEZADO               ********************************************/
 .cuerpo{

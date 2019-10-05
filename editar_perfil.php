@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <div class="input-group">
+            <div class="input-group separacion-abajo-arriba">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="archivo" aria-describedby="inputGroupFileAddon04">
                 <label class="custom-file-label" for="archivo">Elegir foto</label>

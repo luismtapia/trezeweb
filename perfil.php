@@ -12,11 +12,12 @@
       </div>
 
        <div class="card-body">
-           <h5 class="card-title">Tapia Bautista Luis Manuel</h5>
+
+           <h5 class="card-title separacion-abajo-arriba"> <?php echo "Tapia Bautista Luis Manuel"; ?> </h5>
            <p class="card-text">
-             Seleccione una imagen .png
+
            </p>
-           <a href="editar_perfil.php" class="btn btn-primary">Editar Perfil</a>
+           <a href="editar_perfil.php" class="btn btn-primary ">Editar Perfil</a>
        </div>
    </div>
 </article>
