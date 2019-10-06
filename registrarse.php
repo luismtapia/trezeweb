@@ -32,7 +32,7 @@
           <h5 class="logo">|3 TREZE</h5>
         </div>
         <div class="botonera">
-            <a class="iconos" href="index.php">Iniciar sesion <span class="fa fa-arrow-circle-right"></span> </a>
+            <a class="iconos" href="login.php">Iniciar sesion <span class="fa fa-arrow-circle-right"></span> </a>
         </div>
       </form>
     </div>

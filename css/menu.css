@@ -5,19 +5,19 @@
   width: 150px;
   border-radius: 8px;
   overflow: hidden;
-  margin: 2px;
+  margin: 4px;
   padding: 0;
   font-family: sans-serif;
   list-style: none;
   text-decoration: none;
 }
 .item-treze{ /*lineas horizontales del menu*/
-  border-top: 1px solid #2980b9;
+  border-top: 2px solid #2980b9;
   overflow: hidden;
 }
 .btn-treze{ /* titulos*/
   display: block;
-  padding: 10px 15px;
+  padding: 13px 15px;
   background: #3498db;
   color: white;
   position: relative;
@@ -75,7 +75,7 @@
   opacity: 1;
 }
 .item-treze:target .sub-menu-treze{
-  max-height: 10em;
+  max-height: 12em;
 }
 
 

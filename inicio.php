@@ -14,17 +14,17 @@
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css'>
 
     <link rel="stylesheet" href="css/redes_sociales.css">
-
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/treze.css">
+    <link rel="stylesheet" href="css/menu.css">
+
 
   </head>
   <body>
-        <?php include 'componentes/menu_.html'; ?>
+        <?php include 'componentes/menu.html'; ?>
         <section class="cuerpo">
             <article class="titulo">
               <div class="tarjeta-titulo">
-                <p id="titulo">Inicio</p>
+                <p class="animacion-titulo" id="titulo">Inicio</p>
               </div>
             </article>
 

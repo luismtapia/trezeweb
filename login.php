@@ -28,7 +28,7 @@
           <button type="submit" class="bubbly-button">Iniciar sesion</button>
         </div>
 
-        <div class="">
+        <div class="animacion1">
           <h5 class="logo">|3 TREZE</h5>
         </div>
         <div class="botonera">

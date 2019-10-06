@@ -28,20 +28,32 @@ body{
   color: #fff;
   display: flex;
   justify-content: center;
-  transform: translate(-20px, 0);
   width: 400px;
   height: 40px;
   max-width: 400px;
   max-height: 40px;
   border-radius: 10px;
-  opacity: 0.2;
-  transition: 0.2s;
 }
-.tarjeta-titulo:hover{
-  opacity: 1;
-  transform: translate(20px, 0px);
-  transition: all ease-in 1s;
+
+.animacion-titulo {
+  padding-top: 5px;
+  animation-name: titulo-animacion;
+  animation-duration: 2300ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
+
+@keyframes titulo-animacion {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150px, 0);
+    opacity: 0;
+  }
+}
+
 
 
 /***************************************                 PERFIL                   ********************************************/
@@ -125,9 +137,6 @@ body{
 }
 .lineas{
   display: inline;
-}
-.linea1 .linea2 {
-
 }
 .linea1 {
   float: left;

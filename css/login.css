@@ -1,7 +1,7 @@
 
 html, body {
   position: relative;
-  background-color: #000000;
+  background-color: #191919;
   display: flex;
   margin-top: 20px;
   justify-content: center;
@@ -13,7 +13,7 @@ html, body {
   border-radius: 15px;
   width: 350px;
   height: 550px;
-  box-shadow: 0 12px 24px 0 rgba(228, 188, 23, 0.5);
+  box-shadow: 0 15px 24px 10px rgba(0, 0, 0, 0.9);
   position: relative;
 }
 
@@ -84,4 +84,30 @@ html, body {
   color: #ffffff;
   position: absolute;
   text-decoration: none;
+}
+
+
+.animacion1 {
+  animation-name: mover-titulo;
+  animation-duration: 2300ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes mover-titulo {
+  0% {
+    opacity: 0.9;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
 }
