@@ -1,5 +1,7 @@
 <?php
-  //include 'componentes/menu_.html';
+  //VALIDAR
+  $_POST['usuario'];
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

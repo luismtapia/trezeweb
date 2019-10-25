@@ -1,5 +1,13 @@
 <?php
     //include 'componentes/header.php';
+    include('treze.class.php');
+    include('config.php');
+    if (isset($_POST['iniciar'])) {
+      $data = $_POST;
+      //var_dump($_POST);
+      //$sitio->registro($data);
+      //header("Location: inicio.php");
+    }
  ?>
 
 <!DOCTYPE html>
@@ -20,12 +28,12 @@
       		<h2 class="form-titulo" id="iniciar_sesion">Iniciar sesion</h2>
       		<div class="form-cuerpo">
 
-      			<input type="text" class="input" placeholder="Usuario" title=""/>
-      			<input type="password" class="input" placeholder="Password" />
+      			<input type="text" name="usuario" class="input" placeholder="Usuario" title=""/>
+      			<input type="password" name="clave" class="input" placeholder="Password" />
       		</div>
       	</div>
         <div class="centrado">
-          <button type="submit" class="bubbly-button">Iniciar sesion</button>
+          <button type="submit" name="iniciar" class="bubbly-button">Iniciar sesion</button>
         </div>
 
         <div class="animacion1">

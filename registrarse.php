@@ -1,5 +1,13 @@
 <?php
-    //include 'componentes/header.php';
+    include('treze.class.php');
+    include('config.php');
+    if (isset($_POST['registrar'])) {
+      $data = $_POST;
+      //var_dump($_POST);
+      $sitio->registro($data);
+      header("Location: login.php");
+    }
+
  ?>
 
 <!DOCTYPE html>
@@ -15,26 +23,25 @@
   <body>
     <div class="caja">
 
-      <form class="" action="" method="post" onsubmit="enviar(event, this)">
+      <form class="" action="registrarse.php" method="POST" <?php /*onsubmit="enviar(event, this)"*/ ?>>
         <div class="iniciar_sesion">
       		<h2 class="form-titulo" id="iniciar_sesion">Registro</h2>
       		<div class="form-cuerpo">
-            <input type="email" class="input" placeholder="Correo" title=""/>
-      			<input type="text" class="input" placeholder="Usuario" title=""/>
-      			<input type="password" class="input" placeholder="Password" />
+            <input type="email" class="input" name="email" placeholder="Correo" title=""/>
+      			<input type="text" class="input" name="usuario" placeholder="Usuario" title=""/>
+      			<input type="password" class="input" name="contrasena" placeholder="Password" />
       		</div>
       	</div>
         <div class="centrado">
-          <button type="submit" class="bubbly-button">Crear cuenta</button>
-        </div>
-
-        <div class="">
-          <h5 class="logo">|3 TREZE</h5>
-        </div>
-        <div class="botonera">
-            <a class="iconos" href="login.php">Iniciar sesion <span class="fa fa-arrow-circle-right"></span> </a>
+          <button type="submit" class="bubbly-button" name="registrar" value="Registrarse" >Crear cuenta</button>
         </div>
       </form>
+      <div class="">
+        <h5 class="logo">|3 TREZE</h5>
+      </div>
+      <div class="botonera">
+          <a class="iconos" href="login.php">Iniciar sesion <span class="fa fa-arrow-circle-right"></span> </a>
+      </div>
     </div>
 
     <script src="js/script_burbujas.js"></script>
