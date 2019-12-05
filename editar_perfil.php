@@ -1,5 +1,7 @@
 <?php
-
+    include 'componentes/treze.class.php';
+    //print_r($_SESSION);
+    $data=$_SESSION;
  ?>
 
  <!DOCTYPE html>
@@ -36,91 +38,99 @@
                      Mis datos
                  </div>
                  <div class="card-body">
-                     <h5 class="card-title">Card title</h5>
-                     <div class="input-group separacion-abajo-arriba">
-                       <div class="custom-file">
-                         <input type="file" class="custom-file-input" id="archivo" aria-describedby="inputGroupFileAddon04">
-                         <label class="custom-file-label" for="archivo">Elegir foto</label>
-                       </div>
-                       <div class="input-group-append">
-                         <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Subir</button>
-                       </div>
-                     </div>
+                       <h5 class="card-title"><?php echo $data['id_usuario']; ?></h5>
 
-                     <form>
-                         <div class="form-row">
-                           <div class="input-group">
-                               <div class="input-group-prepend">
-                                 <span class="input-group-text">Nombre y apellidos</span>
+                       <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                         <!--****************************************************************-->
+                        <!--
+                          <div class="form-row">
+                               <div class="col mb-3">
+                                  <label for="nombre">Nombre(s) y Apellido(s)</label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="material-icons">person</i> </span>
+                                      </div>
+                                      <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" required>
+                                      <input type="text" name="apellidos" class="form-control" placeholder="Apellido(s)" required>
+                                      <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                                  </div>
                                </div>
-                               <input type="text" aria-label="First name" class="form-control" placeholder="Nombre(s)">
-                               <input type="text" aria-label="Last name" class="form-control is-invalid" placeholder="Apellido(s)">
-                           </div>
-                         </div>
-
-                         <div class="form-row">
-                           <div class="col-md-9 mb-3">
-                             <label for="validationServerUsername">Correo</label>
-                             <div class="input-group">
-                               <div class="input-group-prepend">
-                                 <span class="input-group-text" id="inputGroupPrepend3"> <i class="fas fa-envelope"></i> </span>
+                          </div>
+                          -->
+                          <!--****************************************************************-->
+                          <div class="form-row">
+                               <div class="col mb-3">
+                                   <label for="usuario">Usuario</label>
+                                   <div class="input-group">
+                                       <div class="input-group-prepend">
+                                         <span class="input-group-text" id="inputGroupPrepend">
+                                           <i class="material-icons">person</i>
+                                         </span>
+                                       </div>
+                                       <input type="text" class="form-control" name="usuario" id="usuario" value="<?php echo $data['usuario']; ?>" placeholder="Usuario" aria-describedby="inputGroupPrepend" required>
+                                       <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                                   </div>
                                </div>
-                               <input type="text" class="form-control is-valid" id="validationServerUsername" placeholder="Correo" aria-describedby="inputGroupPrepend3" required>
-                               <div class="invalid-feedback">
-                                 Please choose a username.
+                          </div>
+
+                          <!--****************************************************************-->
+                          <div class="form-row">
+                               <div class="col mb-3">
+                                   <label for="correo">Correo electronico</label>
+                                   <div class="input-group">
+                                       <div class="input-group-prepend">
+                                         <span class="input-group-text" id="inputGroupPrepend">
+                                           <i class="material-icons">mail</i>
+                                         </span>
+                                       </div>
+                                       <input type="text" class="form-control" name="correo" id="correo" value="<?php echo $data['email']; ?>" placeholder="Correo electronico" required>
+                                       <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                                   </div>
                                </div>
-                             </div>
-                           </div>
-                         </div>
-                         <div class="form-row">
-                           <div class="col-md-6 mb-3">
-                             <label for="validationServer03">Usuario</label>
-                             <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
-                             <div class="invalid-feedback">
-                               Please provide a valid city.
-                             </div>
-                           </div>
-                           <div class="col-md-3 mb-3">
-                             <label for="validationServer04">State</label>
-                             <input type="password" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
-                             <div class="invalid-feedback text-muted ">
-                               Please provide a valid state.
-                             </div>
-                           </div>
-                           <div class="col-md-9 mb-3">
-                             <form class="form-inline">
-                               <div class="form-group">
-                                 <label for="pass">Password</label>
-                                 <input type="password" id="pass" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-                                 <small id="passwordHelpInline" class="text-muted">
-                                   Must be 8-20 characters long.
-                                 </small>
+                          </div>
+
+                          <!--****************************************************************-->
+                          <div class="form-row">
+                               <div class="col mb-3">
+                                   <label for="contrasena">Contraseña</label>
+                                   <div class="input-group">
+                                       <div class="input-group-prepend">
+                                         <span class="input-group-text" id="inputGroupPrepend">
+                                           <i class="material-icons">lock</i>
+                                         </span>
+                                       </div>
+                                       <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" required>
+                                       <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                                   </div>
                                </div>
-                             </form>
-                           </div>
+                          </div>
 
-                         </div>
-                         <div class="form-group">
-                           <div class="form-check">
-                             <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-                             <label class="form-check-label" for="invalidCheck3">
-                               Agree to terms and conditions
-                             </label>
-                             <div class="valid-feedback">
-                               You must agree before submitting.
-                             </div>
-                           </div>
-                         </div>
-                         <button class="btn btn-primary" type="submit">Submit form</button>
-                     </form>
+                          <!--****************************************************************-->
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="">Foto de perfil</label>
+                                <input type="file" class="form-control-file" name="archivo" id="archivo" >
+                              </div>
+                            </div>
 
 
-
-
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="invalidCheck33" required>
+                              <label class="custom-control-label" for="invalidCheck33">Acepto terminos y condiciones</label>
+                              <div class="invalid-feedback">Debe aceptar los terminos y condiciones</div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary btn-sm " type="submit">Submit form</button>
+                       </form>
                  </div>
              </div>
          </article>
 
+         <script src="js/validacion_forms.js"></script>
          <!-- Optional JavaScript -->
          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

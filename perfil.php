@@ -1,5 +1,6 @@
 <?php
-
+  include 'componentes/treze.class.php';
+  print_r($_SESSION);
  ?>
 
  <!DOCTYPE html>
@@ -15,7 +16,6 @@
      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css'>
 
      <link rel="stylesheet" href="css/redes_sociales.css">
-
      <link rel="stylesheet" href="css/menu.css">
      <link rel="stylesheet" href="css/treze.css">
 
