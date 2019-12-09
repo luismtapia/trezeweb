@@ -1,6 +1,5 @@
 <?php
     //include 'componentes/header.php';
-<<<<<<< HEAD:componentes/login.php
     /*include('treze.class.php');
     include('config.php');
     if (isset($_POST['iniciar'])) {
@@ -11,7 +10,6 @@
 
       //header("Location: inicio.php");
     }*/
-=======
     include('treze.class.php');
     include('config.php');
     if (isset($_POST['iniciar'])) {
@@ -20,7 +18,6 @@
       //$sitio->registro($data);
       //header("Location: inicio.php");
     }
->>>>>>> 78593a827138df5cd58c136105c8beb8ea98c9bb:login.php
  ?>
 
 <!DOCTYPE html>
@@ -42,11 +39,9 @@
       		<div class="form-cuerpo">
 
       			<input type="text" name="usuario" class="input" placeholder="Usuario" title=""/>
-<<<<<<< HEAD:componentes/login.php
+
       			<input type="password" name="contrasena" class="input" placeholder="Password" />
-=======
-      			<input type="password" name="clave" class="input" placeholder="Password" />
->>>>>>> 78593a827138df5cd58c136105c8beb8ea98c9bb:login.php
+
       		</div>
       	</div>
         <div class="centrado">

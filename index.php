@@ -12,6 +12,6 @@
   <body>
     <h1>¡BIENVENIDO!</h1>
     <a href="componentes/login.php">Login</a>
-    <a href="compoentes/registrarse.php">Registrarse</a>
+    <a href="componentes/registrarse.php">Registrarse</a>
   </body>
 </html>

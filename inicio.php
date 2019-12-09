@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
-  
-=======
   //VALIDAR
-  $_POST['usuario'];
->>>>>>> 78593a827138df5cd58c136105c8beb8ea98c9bb
+  //$_POST['usuario'];
 
  ?>
 <!DOCTYPE html>
