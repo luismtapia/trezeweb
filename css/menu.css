@@ -1,0 +1,165 @@
+
+/***************************************           MENU               *****************************************/
+.menu-treze{ /**/
+  position: fixed;
+  width: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 4px;
+  padding: 0;
+  font-family: sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+.item-treze{ /*lineas horizontales del menu*/
+  border-top: 2px solid #2980b9;
+  overflow: hidden;
+}
+.btn-treze{ /* titulos*/
+  display: block;
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  position: relative;
+}
+.btn-treze:before{ /* adorno en forma de rombo*/
+  content: "";
+  position: absolute;
+  width: 20px; /*original 14*/
+  height: 20px;
+  background: #3498db;
+  left: 5px; /*20*/
+  bottom: -9px; /*-7 baja el adorno*/
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+.btn-treze i{ /*iconos*/
+  margin-right: 10px;
+}
+.btn-treze:hover{
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.9;
+  transition: width 2s;
+}
+.sub-menu-treze{
+  background: #333;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+  border-right: 3px solid #3498db;
+}
+.sub-menu-treze a{ /* submenus*/
+  text-decoration: none;
+  list-style: none;
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+}
+.sub-menu-treze a:before{ /* animacion del submenu*/
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: #3498db;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+  border-radius: 3px;
+}
+.sub-menu-treze a:hover:before{ /* muestra la animacion del submenu*/
+  opacity: 1;
+}
+.item-treze:target .sub-menu-treze{
+  max-height: 12em;
+}
+
+
+
+/***************************************       LOGO                           ******************************/
+.logo{
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  left: 5px;
+  top: 420px;
+}
+.logo .logo-treze{
+  position: relative;
+}
+.logo .logo-treze .face{
+  width: 140px;
+  height: 95px;
+  transition: 0.5s;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+.logo .logo-treze .face.face1{
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(50px);
+}
+.logo .logo-treze:hover .face.face1{
+  background: #ff0057;
+  transform: translateY(0);
+}
+.logo .logo-treze .face.face1 .contenido{
+  opacity: 0.2;
+  transition: 0.5s;
+}
+.logo .logo-treze:hover .face.face1 .contenido{
+  opacity: 1;
+}
+.logo .logo-treze .face.face2{
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-40px);
+}
+.logo .logo-treze:hover .face.face2{
+  transform: translateY(0);
+}
+.logo .logo-treze .face.face2:after{
+  content: "";
+  background-color: red;
+  width: 22px;
+  height: 17px;
+  transform: translate(26px,-44px);
+  transition: 0.5s;
+}
+
+.logo .logo-treze .face.face2 .contenido{
+  margin: 0;
+  padding: 0;
+  color: #1c1c1c;
+}
+
+.logo .logo-treze .face.face2 .contenido a{
+  margin: 15px 0 0;
+  display: inline;
+  text-decoration: none;
+  font-weight: 900;
+  color: #1c1c1c;
+  padding: 5px;
+  border: 1px solid #1c1c1c;/*333*/
+}
+
+.logo .logo-treze .face.face2 .contenido a:hover{
+  background: #ff0081;
+  border: 1px solid #ff0081;
+  color: #fff;
+}

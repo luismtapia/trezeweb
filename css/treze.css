@@ -1,0 +1,274 @@
+
+body{
+  background: #191919;
+  color: #ffffff;
+}
+.separacion-abajo-arriba{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/***************************************                 ENCABEZADO               ********************************************/
+.cuerpo{
+  /*background-color: #7e7b52;*/
+  display: block;
+  margin: 10px 0 0 155px;
+  height: auto;
+}
+.titulo{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.tarjeta-titulo{
+  background-color: #333;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 40px;
+  max-width: 400px;
+  max-height: 40px;
+  border-radius: 10px;
+}
+
+.animacion-titulo {
+  padding-top: 5px;
+  animation-name: titulo-animacion;
+  animation-duration: 2300ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes titulo-animacion {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150px, 0);
+    opacity: 0;
+  }
+}
+
+
+
+/***************************************                 PERFIL                   ********************************************/
+.contenido-perfil{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.card{
+  background-color: #1c1c1c;
+  margin: 26px;
+  width: 20rem;
+  border-left: 8px solid #ff0081;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+.imagen{
+  padding: 10px;
+}
+.img-size-2{
+  width: 125px;
+  height: 125px;
+}
+
+
+.caja{
+  width: 40rem;
+}
+.card-header{
+  text-transform: uppercase;
+  //border-bottom: 2px solid #ff0081;
+}
+
+.card-body:before{
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 4px;
+  background: #ff0081;
+  right: 0;
+}
+
+/************************************************    PRODUCTOS                 **********************/
+.contenido-productos{
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+}
+.card-productos{
+  background-color: #1c1c1c;
+  padding: 10px 20px 10px 20px;
+  margin: 40px;
+  width: 60rem;
+  border-left: 8px solid #ff0081;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+
+
+/************************************************                     **********************/
+.pie-pagina{
+  width: 100%;
+  background-image: -webkit-linear-gradient(#191919, #191919);
+  background-image: -o-linear-gradient(#191919, #191919);
+  background-image: linear-gradient(#191919, #191919);
+  float: left;
+  justify-content: center;
+}
+
+.tarjetas-footer{
+  margin: 10px 20px 10px 20px;
+  //background-color: #ff8881;
+  //display: block;
+  max-width: 97%;
+  height: 350px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.tarjetas{
+  height: 250px;
+  width: 25%;
+	float: left;
+  color: #ff0081;
+  background-color: white;
+  border-bottom: 6px solid #e4bc17;
+  border-radius: 5px;
+  margin: 20px 20px 10px 20px;
+  padding: 40px 20px 10px 20px;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+}
+.icono{
+  font-size: 32px;
+}
+.separador {
+  padding: 20px;
+}
+.lineas{
+  display: inline;
+}
+.linea1 {
+  float: left;
+  width: 60px;
+}
+.linea2{
+  float: right;
+  width: 60px;
+}
+
+
+
+
+.contenido-tablas{
+  margin: 30px;
+}
+
+
+
+.titulo-tabla {
+		padding-bottom: 15px;
+		background: #ff8881;
+		padding: 16px 30px;
+		border-radius: 3px 3px 0 0;
+}
+.titulo-tabla h2 {
+		margin: 2px 0 0;
+		font-size: 24px;
+}
+	.titulo-tabla .btn-group {
+		float: right;
+	}
+	.titulo-tabla .btn {
+		float: right;
+		font-size: 15px;
+		border: none;
+		min-width: 50px;
+		border-radius: 2px;
+		border: none;
+		margin-left: 10px;
+	}
+	.titulo-tabla .btn i {
+		float: left;
+		font-size: 21px;
+		margin-right: 5px;
+	}
+	.titulo-tabla .btn span {
+		float: left;
+		margin-top: 2px;
+	}
+
+
+
+
+
+
+
+
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #F44336;
+}
+
+
+
+
+      .pagination {
+          float: right;
+          margin: 0 0 5px;
+      }
+      .pagination li a {
+          border: none;
+          font-size: 13px;
+          min-width: 30px;
+          min-height: 30px;
+          color: #999;
+          margin: 0 2px;
+          line-height: 30px;
+          border-radius: 2px !important;
+          text-align: center;
+          padding: 0 6px;
+      }
+      .pagination li a:hover {
+          color: #666;
+      }
+      .pagination li.active a, .pagination li.active a.page-link {
+          background: #03A9F4;
+      }
+      .pagination li.active a:hover {
+          background: #0397d6;
+      }
+  	.pagination li.disabled i {
+          color: #ccc;
+      }
+      .pagination li i {
+          font-size: 16px;
+          padding-top: 6px
+      }
+      .hint-text {
+          float: left;
+          margin-top: 10px;
+          font-size: 13px;
+      }
+
+
+
+
+
+
+
+.derechos{
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
