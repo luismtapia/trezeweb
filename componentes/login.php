@@ -1,15 +1,12 @@
 <?php
-    //include 'componentes/header.php';
-    /*include('treze.class.php');
+    include 'treze.class.php';
     include('config.php');
     if (isset($_POST['iniciar'])) {
       $data = $_POST;
-      var_dump($_POST);
-      $fila=$sitio->login($data);
-      $fila['usuario'];
+      $sitio->login($data['usuario'], $data['contrasena']);
+      //$fila['usuario'];
 
-      //header("Location: inicio.php");
-    }*/
+    }
  ?>
 
 <!DOCTYPE html>
@@ -25,7 +22,7 @@
   <body>
     <div class="caja">
 
-      <form class="" action="validar.php" method="post" onsubmit="enviar(event, this)">
+      <form class="" action="login.php" method="post" >
         <div class="iniciar_sesion">
       		<h2 class="form-titulo" id="iniciar_sesion">Iniciar sesion</h2>
       		<div class="form-cuerpo">

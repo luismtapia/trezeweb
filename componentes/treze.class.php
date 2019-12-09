@@ -12,29 +12,25 @@
 
         function login($usuario,$contrasena){
           $this->conexion();
-    			//$this->conexion->beginTransaction();
           $contrasena=md5($contrasena);
-          try{
-            $sql = 'SELECT * FROM usuarios WHERE usuario = :usuario';
-            $sentencia = $this->conexion->prepare($sql);
-            $sentencia->bindParam(':usuario', $usuario);
-            $sentencia->execute();
-            $fila = $sentencia->fetch();
+              $sql = 'SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena= :contrasena';
+              $sentencia = $this->conexion->prepare($sql);
+              $sentencia->bindParam(':usuario', $usuario);
+              $sentencia->bindParam(':contrasena', $contrasena);
+              $sentencia->execute();
+              $fila = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-            if ($fila['usuario']==$usuario && $fila['contrasena']==$contrasena) {
-              echo "iguales";
-              $_SESSION=$fila;
-              $_SESSION['validado']=true;
-            }else{
-              echo "Credenciales incorrectas";
-              $_SESSION['validado']=false;
-            }
-
-
-    			}catch(Exception $e){
-    				  //$this->conexion->rollBack();
-              echo $e;
-    			}
+              if (isset($fila['usuario'])) {
+                  $_SESSION=$fila;
+                  $_SESSION['validado']=true;
+                  $_SESSION['roles'] = $this->rol($fila['id_usuario']);
+                  $_SESSION['privilegios'] = $this->privilegios($_SESSION['roles']);
+                  //var_dump($_SESSION);
+                  header('Location: ../index.php');
+              }else{
+                  //$this->logout();
+                  header('Location: logout.php?code=0');
+              }
         }
 
         function logout(){
@@ -72,9 +68,7 @@
 
         function rol($id_usuario){
     			$this->conexion();
-    			$contrasena=md5($contrasena);
-    			$sql = 'SELECT r.rol FROM usuario_rol ur INNER JOIN rol r on r.id_rol = ur.id_rol
-    			WHERE ur.id_usuario=:id_usuario';
+    			$sql = 'SELECT rol, id_rol FROM roles_usuarios INNER JOIN roles using(id_rol) where id_usuario = :id_usuario';
     			$sentencia = $this->conexion->prepare($sql);
     			$sentencia->bindParam('id_usuario', $id_usuario);
     			$sentencia->execute();
@@ -85,6 +79,7 @@
     				$roles[$i]['id_rol']=$fila['id_rol'];
     				$i++;
     			}
+          //var_dump($roles);
     			return $roles;
     		}
 
@@ -97,14 +92,13 @@
       				}
       			}
     				if (!$rol_valido) {
-    					header('Location: logout.php?code=1');
+    					header('Location: componentes/logout.php?code=1');
         		}
     		}
 
     		function privilegios($roles){
     			$this->conexion();
-    			$sql = 'SELECT p.privilegio FROM privilegio p INNER JOIN rol_privilegio r on p.id_rol = r.id_rol
-    			WHERE r.id_rol=:id_rol';
+          $sql = 'SELECT p.privilegio,p.id_privilegio FROM privilegios p inner join roles_privilegios r on p.id_privilegio = r.id_privilegio where r.id_rol = :id_rol';
     			$i=0;
     			$privilegios=array();
     			foreach ($roles as $key => $rol) {
@@ -117,6 +111,7 @@
       				$i++;
       			}
     			}
+          return $privilegios;
     		}
 
         function mensaje($id){

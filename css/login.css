@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Oswald:300,700,400);
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap);
 
 html, body {
   position: relative;
@@ -5,7 +7,7 @@ html, body {
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  font-family:  "Helvetica", Arial, sans-serif;
+  font-family:  "Oswald","Helvetica", Arial, sans-serif;
 }
 
 .caja{
@@ -80,10 +82,11 @@ html, body {
 }
 
 .iconos{
-  margin-top: 30px;
+  margin-top: 25px;
   color: #ffffff;
   position: absolute;
   text-decoration: none;
+  font-size: 22px;
 }
 
 
