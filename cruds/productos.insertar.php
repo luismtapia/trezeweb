@@ -3,9 +3,8 @@
     if(isset($_POST['nuevo_producto'])){
       $data=$_POST;
       $data['id_usuario']=$_SESSION['id_usuario'];
-      $data['id_categoria']=1;
-      $sitio->actualizarProducto($data);
-      print_r($data);
+      $sitio->insertarProducto($data);
+      //print_r($data);
       echo '<div class="alert alert-success" role="alert"> Se ha insertado un nuevo producto </div>';;
     }
 
@@ -41,7 +40,7 @@
                              <i class="material-icons">spellcheck</i>
                            </span>
                          </div>
-                         <input type="text" class="form-control" name="nombre" id="validationCustom01" placeholder="Nombre del producto" required>
+                         <input type="text" class="form-control" name="producto" id="validationCustom01" placeholder="Nombre del producto" required>
                          <div class="valid-feedback">
                          Nombre correcto!
                          </div>
@@ -86,7 +85,7 @@
                                  <i class="material-icons">attach_money</i>
                                </span>
                              </div>
-                             <input type="text" class="form-control" name="precio_de_compra" id="validationCustomUsername" placeholder="Precio de compra" aria-describedby="inputGroupPrepend" required>
+                             <input type="text" class="form-control" name="precio_compra" id="validationCustomUsername" placeholder="Precio de compra" aria-describedby="inputGroupPrepend" required>
                              <div class="input-group-append">
                                 <span class="input-group-text">MN</span>
                              </div>
@@ -101,7 +100,7 @@
                                  <i class="material-icons">receipt</i>
                                </span>
                              </div>
-                             <input type="text" class="form-control" name="precio_de_venta" id="validationCustom03" placeholder="Precio de venta" required>
+                             <input type="text" class="form-control" name="precio_venta" id="validationCustom03" placeholder="Precio de venta" required>
                              <div class="invalid-feedback">Este campo no puede estar vacio</div>
                          </div>
                     </div>
@@ -146,6 +145,33 @@
                     </div>
                </div>
 
+               <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label for="validationCustomUsername">ID usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupPrepend">
+                                <i class="material-icons">loyalty</i>
+                              </span>
+                            </div>
+                            <input type="text" class="form-control" name="id_usuario" id="validationCustomUsername" placeholder="Id usuario" value="<?php echo $_SESSION['id_usuario']?>" aria-describedby="inputGroupPrepend" required disabled>
+                            <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                         <label for="validationCustomUsername">ID categoria</label>
+                         <div class="input-group">
+                             <div class="input-group-prepend">
+                               <span class="input-group-text" id="inputGroupPrepend">
+                                 <i class="material-icons">loyalty</i>
+                               </span>
+                             </div>
+                             <input type="text" class="form-control" name="id_categoria" id="validationCustomUsername" placeholder="ID categoria" aria-describedby="inputGroupPrepend" required>
+                             <div class="invalid-feedback">Este campo no puede estar vacio</div>
+                         </div>
+                    </div>
+               </div>
+<!--
                <div class="form-group">
                  <div class="custom-control custom-checkbox">
                    <input type="checkbox" class="custom-control-input" id="invalidCheck33" required>
@@ -158,6 +184,7 @@
                    You must agree before submitting.
                  </div>
                </div>
+             -->
                <button type="submit" class="btn btn-primary btn-sm " name="nuevo_producto">Submit form</button>
                <a href="../productos.php" class="btn btn-sm btn-danger">Regresar</a>
             </form>
@@ -165,11 +192,69 @@
       </div>
     </article>
 
+
+
+
+
+
+
+
+
+
+
+<?php
+    $data_categoria=$sitio->obtenerCategorias();
+?>
+
+    <article class="cuerpo" >
+      <div class="contenido-tablas">
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th></th>
+              <th>ID</th>
+              <th>CATEGORIAS</th>
+
+            </tr>
+          </thead>
+          <?php for ($i=0; $i <count($data_categoria) ; $i++): ?>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><?php echo $data_categoria[$i]['id_categoria']; ?> </td>
+                <td><?php echo $data_categoria[$i]['categoria']; ?> </td>
+              </tr>
+            </tbody>
+          <?php endfor; ?>
+        </table>
+      </div>
+
+
+
+
+
+
+<!--
+        <div class="table-wrapper">
+            <div class="clearfix">
+            <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+            <ul class="pagination">
+            <li class="page-item disabled"><a href="#">Previous</a></li>
+            <li class="page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+            </ul>
+            </div>
+        </div>
+
+      -->
+    </article>
+
+
     <script src="../js/validacion_forms.js"></script>
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   </body>
 </html>

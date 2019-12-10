@@ -60,7 +60,7 @@
                 <td><?php echo $data[$i]['fecha_captura']; ?></td>
                 <td>
                     <a href="cruds/productos.actualizar.php?id_producto=<?php echo $data[$i]['id_producto'];?>" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="cruds/produsctos.eliminar.php?id_producto=<?php echo $data[$i]['id_producto'];?>" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    <a href="cruds/productos.eliminar.php?id_producto=<?php echo $data[$i]['id_producto'];?>" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                 </td>
               </tr>
             </tbody>

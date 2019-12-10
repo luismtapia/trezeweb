@@ -1,6 +1,5 @@
 <?php
     include 'componentes/treze.class.php';
-    //print_r($_SESSION);
     $data=$_SESSION;
  ?>
 

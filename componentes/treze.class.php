@@ -1,11 +1,12 @@
 <?php
     session_start();
   	class Treze{
+
     		var $conexion = null;
     		function __construct(){
-
     		}
-    		function conexion(){
+
+        function conexion(){
     			include('config.php');
     			$this->conexion = new PDO($sgbd.':host='.$bdhost.';dbname='.$bdname, $bdusuario, $bdcontrasena);
     		}
@@ -172,11 +173,19 @@
           $this->conexion();
     			$this->conexion->beginTransaction();
     			try{
-            $sql="insert into productos (producto,descripcion,marca,cantidad,precio_compra,precio_venta,descuento,fecha_captura,id_usuario,id_categoria) values (:producto,:descripcion,:marca,:cantidad,:precio_compra,:precio_venta,:descuento,:fecha_captura,:id_usuario,:id_categoria)";
+            $sql="insert into productos (producto,descripcion,marca,cantidad,precio_compra,precio_venta,descuento,fecha_captura,id_usuario,id_categoria) values (:producto,:descripcion,:marca,:cantidad,:precio_compra,:precio_venta,:descuento,CURDATE(),:id_usuario,:id_categoria)";
             $sentencia=$this->conexion->prepare($sql);
             $sentencia->bindParam(":producto",$data['producto']);
             $sentencia->bindParam(":descripcion",$data['descripcion']);
             $sentencia->bindParam(":marca",$data['marca']);
+            $sentencia->bindParam(":cantidad",$data['cantidad']);
+            $sentencia->bindParam(":precio_compra",$data['precio_compra']);
+            $sentencia->bindParam(":precio_venta",$data['precio_venta']);
+            $sentencia->bindParam(":descuento",$data['descuento']);
+            //$sentencia->bindParam(":fecha_captura",$data['fecha_captura']);
+            $sentencia->bindParam(":id_usuario",$data['id_usuario']);
+            $sentencia->bindParam(":id_categoria",$data['id_categoria']);
+
             $sentencia->execute();
       			$this->conexion->commit();
     			}catch(Exception $e){
@@ -184,6 +193,39 @@
     			}
         }
 
+        function eliminarProducto($id_producto){
+          $this->conexion();
+    			try{
+            $sql="delete from productos where id_producto=:id_producto";
+        		$statement=$this->conexion->prepare($sql);
+        		$statement->bindParam(":id_producto",$id_producto,PDO::PARAM_INT);
+        		$statement->execute();
+    			}catch(Exception $e){
+    				  echo $e;
+    			}
+        }
+
+        function actualizarProducto($id_producto,$data){
+          $this->conexion();
+          try{
+            $sql="update productos set producto=:producto, descripcion=:descripcion, marca=:marca, cantidad=:cantidad, precio_compra=:precio_compra, precio_venta=:precio_venta, descuento=:descuento, fecha_captura=:fecha_captura, id_categoria=:id_categoria where id_producto=:id_producto";
+            $sentencia=$this->conexion->prepare($sql);
+            $sentencia->bindParam(":producto",$data['producto']);
+            $sentencia->bindParam(":descripcion",$data['descripcion']);
+            $sentencia->bindParam(":marca",$data['marca']);
+            $sentencia->bindParam(":cantidad",$data['cantidad']);
+            $sentencia->bindParam(":precio_compra",$data['precio_compra']);
+            $sentencia->bindParam(":precio_venta",$data['precio_venta']);
+            $sentencia->bindParam(":descuento",$data['descuento']);
+            $sentencia->bindParam(":fecha_captura",$data['fecha_captura']);
+            //$sentencia->bindParam(":id_usuario",$data['id_usuario']);
+            $sentencia->bindParam(":id_categoria",$data['id_categoria']);
+            $sentencia->bindParam(":id_producto",$id_producto);
+            $sentencia->execute();
+          }catch(Exception $e){
+              echo $e;
+          }
+        }
 
 
 

@@ -1,6 +1,8 @@
 <?php
   include 'componentes/treze.class.php';
-  print_r($_SESSION);
+  //$sitio->validar_rol(array('Usuario','Administrador'));
+	$usuario = $_SESSION['usuario'];
+  //print_r($_SESSION);
  ?>
 
  <!DOCTYPE html>
@@ -37,7 +39,7 @@
 
                  <div class="card-body">
 
-                     <h5 class="card-title separacion-abajo-arriba"> <?php echo "Tapia Bautista Luis Manuel"; ?> </h5>
+                     <h5 class="card-title separacion-abajo-arriba"> <?php echo $usuario; ?> </h5>
                      <p class="card-text">
 
                      </p>
