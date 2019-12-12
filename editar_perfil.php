@@ -1,6 +1,18 @@
 <?php
     include 'componentes/treze.class.php';
+
+    //$sitio->validar_rol(array('Usuario','Administrador'));
+    //$id_usuario = $_SESSION['id_usuario'];
+    
+    if (isset($_POST['actualizar'])) {
+        $datos = $_POST;
+        //$datos['id_usuario'] = $id_usuario;
+        $sitio->editar_perfil($datos);
+        print_r($datos);
+        die();
+    }
     $data=$_SESSION;
+    
  ?>
 
  <!DOCTYPE html>
@@ -39,7 +51,7 @@
                  <div class="card-body">
                        <h5 class="card-title"><?php echo $data['id_usuario']; ?></h5>
 
-                       <form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                       <form class="needs-validation" action="editar_perfil.php" method="post" enctype="multipart/form-data" novalidate>
                          <!--****************************************************************-->
                         <!--
                           <div class="form-row">
@@ -123,7 +135,7 @@
                               <div class="invalid-feedback">Debe aceptar los terminos y condiciones</div>
                             </div>
                           </div>
-                          <button class="btn btn-primary btn-sm " type="submit">Submit form</button>
+                          <button class="btn btn-primary btn-sm " name="actualizar" type="submit">Actualizar</button>
                        </form>
                  </div>
              </div>
